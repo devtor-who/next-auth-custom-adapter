@@ -1,9 +1,8 @@
 import { auth } from '@/config/auth/auth';
-import { NextResponse } from 'next/server';
 
 export default auth((request) => {
-  console.log(request.auth);
-  return NextResponse.next();
+  console.log('middleware', request.auth);
+  return;
 });
 
 export const config = {

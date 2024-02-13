@@ -1,11 +1,13 @@
 'use client';
 
-import { signIn } from 'next-auth/react';
+import { signInCredential, signInGithub, signOutApp } from '@/actions';
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <button onClick={() => signIn('github')}>login</button>
+      <button onClick={() => signInGithub()}>login</button>
+      <button onClick={() => signInCredential()}>credential login</button>
+      <button onClick={() => signOutApp()}>logout</button>
     </main>
   );
 }
